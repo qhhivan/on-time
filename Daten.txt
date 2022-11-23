@@ -1,0 +1,58 @@
+Konto:
+Userdaten
+stundenplan
+lehrer
+
+
+Verspätung:
+Uhrzeit
+
+Schule:
+
+Location usw
+
+
+Person
+    ID
+    Vorname
+    Nachname
+    Geburtsdatum
+    Adresse
+    Schul_ID
+    Klassen_ID (optional weil es kann auch ein Lehrer sein)
+    Rolle (Schüler/ Lehrer)
+
+
+
+
+
+ANZEIGEN
+
+USER
+GET Den eigenen Benutzer
+POST Benutzer erstellen
+
+
+- Den User
+- Die Verspätungen
+
+- Den Stundenplan
+- Informationen über die einzelnen Fächer
+- Benachrichtigung an den Lehrer
+
+
+Verspätung 
+GET
+    Aktuelles Fach (anhand der Zeit)
+    lehrer (Anhand des Plan_Faches (TAG Zeit FACH))
+    --
+    Alle Verspätungen ansehen
+
+POST
+    Foto
+    Standort
+    Begründung
+
+Stundenplan
+GET Stundenplan
+GET Fächer
