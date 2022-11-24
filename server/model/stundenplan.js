@@ -4,8 +4,7 @@ const db = require('../db');
 // STUNDENPLAN DATEN
 
 // GET
-// Stundenplan anhand der klasse 
+// Stundenplan anhand der klasse
 // Einzelne Fächer
-
 
 module.exports = {};

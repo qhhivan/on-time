@@ -18,6 +18,7 @@ app.use(helmet());
 
 app.use(express.json());
 
+// Routen
 app.use('/', routes);
 
 app.use(notFound);

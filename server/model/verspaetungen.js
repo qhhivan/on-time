@@ -9,17 +9,11 @@ const db = require('../db');
 // Aktuellen Lehrer
 // Alle verspätungen
 
-
 // POST
 // Verspätung
-  // Foto
-  // Standort
-  // Begründung
-
-
-
-
-
+// Foto
+// Standort
+// Begründung
 
 module.exports = {
   getMovies,
