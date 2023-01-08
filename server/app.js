@@ -2,7 +2,10 @@ const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const path = require('path');
-const routes = require('./routes/movies');
+const userRoutes = require('./routes/user');
+const stundenplanRoutes = require('./routes/stundenplan');
+const verspaetungenRoutes = require('./routes/verspaetungen');
+
 
 const { notFound, errorHandler } = require('./middleware/errorHandler');
 
@@ -19,7 +22,12 @@ app.use(helmet());
 app.use(express.json());
 
 // Routen
-app.use('/', routes);
+app.use('/user', userRoutes);
+app.use('/stundenplan', stundenplanRoutes);
+app.use('/verspaetungen', verspaetungenRoutes);
+
+
+
 
 app.use(notFound);
 app.use(errorHandler);
