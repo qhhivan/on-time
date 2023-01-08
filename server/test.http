@@ -11,3 +11,30 @@ GET http://localhost:3000/verspaetungen/5BHITM?uhrzeit=11:30&tag=Montag
 
 ###
 GET http://localhost:3000/verspaetungen/1
+
+###
+POST http://localhost:3000/verspaetungen
+content-type: application/json
+
+{   
+    "start": "9:30",
+    "ende": "9:50",
+    "foto": "FotoLink2",
+    "person": 1,
+    "begruendung": "Mein Bus hatte einen Unfall",
+    "datum": "2022-10-23"
+}
+###
+POST http://localhost:3000/user
+content-type: application/json
+
+{   
+    "vorname": "Max",
+    "nachnamen": "Mustermann",
+    "email": "mustermail@gmail.com",
+    "geburtsdatum": "2004-06-05",
+    "klasse": "7A",
+    "rolle": "Schüler"
+}
+###
+GET http://localhost:3000/user/klasse/5BHITM

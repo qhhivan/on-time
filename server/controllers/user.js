@@ -7,11 +7,12 @@ const model = require('../model/user');
 const getUser = asyncHandler(async (req, res) => {
   res.status(200).json(await model.getUser(req.params.id));
 });
-// Stundenplan
-// usw.
 
-// const getMovies = asyncHandler(async (req, res) => {
-//   res.status(200).json(await model.getMovies());
-// });
+const postUser = asyncHandler(async (req, res) => {
+  res.status(200).json(await model.postUser(req.body));
+});
 
-module.exports = { getUser };
+const getKlassenID = asyncHandler(async (req, res) => {
+  res.status(200).json(await model.getKlassenID(req.params.name));
+});
+module.exports = { getUser, postUser, getKlassenID };

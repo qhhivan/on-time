@@ -48,8 +48,23 @@ where p.id = $1;`,
 
 // POST
 // Verspätung
+const postVerspaetung = async ({
+  start,
+  ende,
+  foto,
+  person,
+  begruendung,
+  datum,
+}) => {
+  await db.query(
+    'INSERT INTO verspaetungen (start, ende, foto, personen_id, begruendung, datum) values($1, $2, $3, $4, $5, $6);',
+    [start, ende, foto, person, begruendung, datum],
+  );
+  // values ('11:20', '11:40', 'Foto1', 2, 'Musste lernen', '2022-05-06')
+  return 'Erfolgreich hinzugefügt';
+};
 // Foto
 // Standort
 // Begründung
 
-module.exports = { getAktuellesFach, getVerspaetungen };
+module.exports = { getAktuellesFach, getVerspaetungen, postVerspaetung };

@@ -6,7 +6,6 @@ const userRoutes = require('./routes/user');
 const stundenplanRoutes = require('./routes/stundenplan');
 const verspaetungenRoutes = require('./routes/verspaetungen');
 
-
 const { notFound, errorHandler } = require('./middleware/errorHandler');
 
 require('colors');
@@ -25,9 +24,6 @@ app.use(express.json());
 app.use('/user', userRoutes);
 app.use('/stundenplan', stundenplanRoutes);
 app.use('/verspaetungen', verspaetungenRoutes);
-
-
-
 
 app.use(notFound);
 app.use(errorHandler);

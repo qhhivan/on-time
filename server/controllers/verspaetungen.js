@@ -18,9 +18,13 @@ const getAktuellesFach = asyncHandler(async (req, res) => {
 
 // Verspätungen
 const getVerspaetungen = asyncHandler(async (req, res) => {
-  res
-    .status(200)
-    .json(await model.getVerspaetungen(req.params.id));
+  res.status(200).json(await model.getVerspaetungen(req.params.id));
 });
 
-module.exports = { getAktuellesFach, getVerspaetungen };
+const postVerspaetung = asyncHandler(async (req, res) => {
+  res.status(200).json(await model.postVerspaetung(req.body));
+});
+
+// POST VERSPÄTUNG
+
+module.exports = { getAktuellesFach, getVerspaetungen, postVerspaetung };
