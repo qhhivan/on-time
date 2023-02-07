@@ -10,7 +10,7 @@ GET http://localhost:3000/stundenplan/faecher
 GET http://localhost:3000/verspaetungen/5BHITM?uhrzeit=11:30&tag=Montag
 
 ###
-GET http://localhost:3000/verspaetungen/1
+GET http://localhost:3000/verspaetungen/user/2
 
 ###
 POST http://localhost:3000/verspaetungen

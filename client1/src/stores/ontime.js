@@ -25,11 +25,16 @@ export const onTimeStore = defineStore('ontimestore', () => {
   const user = ref([]);
   const getUser = async (id) => {
     const rows = await axios.get(`http://localhost:3000/user/${id}`);
+    console.log(id);
     user.value = rows.data;
     console.log(user.value);
   };
 
   // User erstellen
+  const postUser = async (item) => {
+    await axios.post(`http://localhost:3000/user`, item);
+  };
+
   // Aktuelles Fach
   const aktuellesFach = ref([]);
   const getAktuellesFach = async (time, tag) => {
@@ -44,23 +49,26 @@ export const onTimeStore = defineStore('ontimestore', () => {
   // Alle verspätungen von unserem User
   const userVerspaetungen = ref([]);
   const getUserVerspaetungen = async (id) => {
-    const rows = await axios.get(`http://localhost:3000/verspaetungen/${id}`);
+    const rows = await axios.get(
+      `http://localhost:3000/verspaetungen/user/${id}`,
+    );
     userVerspaetungen.value = rows.data;
     console.log(userVerspaetungen.value);
   }; // Fehler am Server
 
   // Verspätung erstellen
+  const postVerspaetung = async (item) => {
+    await axios.post(`http://localhost:3000/verspaetungen`, item);
+  };
 
+  // IMAGE BSP
   // const fallimages = ref([]);
 
   // const getAll = async () => {
   //   const res = await axios.get('/fall');
   //   fallimages.value = res.data;
   // };
-
-  // const updateLikes = async (item) => {
-  //   await axios.patch(`/fall/${item.id}`, item);
-  // };
+  // ENDE
 
   return {
     stundenplan,
@@ -73,5 +81,7 @@ export const onTimeStore = defineStore('ontimestore', () => {
     getUser,
     getAktuellesFach,
     getUserVerspaetungen,
+    postVerspaetung,
+    postUser
   };
 });

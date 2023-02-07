@@ -9,7 +9,7 @@ const router = express.Router();
 // Stundenplan Routen
 
 router.get('/:klasse', getAktuellesFach);
-router.get('/:id', getVerspaetungen);
+router.get('/user/:id', getVerspaetungen);
 
 // POST
 router.post('/', postVerspaetung);

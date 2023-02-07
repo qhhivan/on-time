@@ -21,10 +21,11 @@ const getVerspaetungen = asyncHandler(async (req, res) => {
   res.status(200).json(await model.getVerspaetungen(req.params.id));
 });
 
-const postVerspaetung = asyncHandler(async (req, res) => {
-  res.status(200).json(await model.postVerspaetung(req.body));
+const postVerspaetung = asyncHandler(async (req) => {
+  await model.postVerspaetung(req.body);
 });
 
 // POST VERSPÄTUNG
 
+// module.exports = { getAktuellesFach, getVerspaetungen };
 module.exports = { getAktuellesFach, getVerspaetungen, postVerspaetung };

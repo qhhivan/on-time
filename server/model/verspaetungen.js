@@ -38,9 +38,9 @@ where p.id = 1;
 const getVerspaetungen = async (id) => {
   const { rows } = await db.query(
     `select p.vorname, p.nachnamen, v.start, v.ende, v.foto, v.begruendung
-from personen p
-join verspaetungen v on p.id = v.personen_id
-where p.id = $1;`,
+    from personen p
+    join verspaetungen v on p.id = v.personen_id
+    where p.id = $1;`,
     [id],
   );
   return rows;

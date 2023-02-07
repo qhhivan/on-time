@@ -6,7 +6,25 @@ onTimeStore().getStundenplan('5BHITM', '2022/23');
 store.getAlleFaecher();
 store.getUser(1);
 store.getAktuellesFach('11:35', 'Montag');
+console.log('Versp');
 store.getUserVerspaetungen(1);
+store.postVerspaetung({
+  start: '9:30',
+  ende: '9:50',
+  foto: 'HTLWW',
+  person: 1,
+  begruendung: '123',
+  datum: '2022-10-23',
+});
+
+store.postUser({
+  vorname: 'Max',
+  nachnamen: 'Mustermann',
+  email: 'mustermail@gmail.com',
+  geburtsdatum: '2004-06-05',
+  klasse: '7A',
+  rolle: 'Schüler',
+});
 // const t = {
 //   "id": 19,
 //   "filename": "fall-03.jpg",
