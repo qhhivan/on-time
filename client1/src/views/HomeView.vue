@@ -2,12 +2,24 @@
 import { onTimeStore } from '@/stores/ontime.js';
 const store = onTimeStore();
 
-onTimeStore().getStundenplan('5BHITM', '2022/23');
-store.getAlleFaecher();
-store.getUser(1);
-store.getAktuellesFach('11:35', 'Montag');
+// STORE TEST
+// vlt musst du await einbauen/ es wegeben
+console.log('stundenplan');
+await store.getStundenplan('5BHITM', '2022/23');
+
+console.log('alle fächer');
+await store.getAlleFaecher();
+
+console.log('user');
+await store.getUser(1);
+
+console.log('aktuelles fach');
+await store.getAktuellesFach('11:35', 'Montag');
+
 console.log('Versp');
-store.getUserVerspaetungen(1);
+await store.getUserVerspaetungen(1);
+
+// POST
 store.postVerspaetung({
   start: '9:30',
   ende: '9:50',
@@ -25,14 +37,8 @@ store.postUser({
   klasse: '7A',
   rolle: 'Schüler',
 });
-// const t = {
-//   "id": 19,
-//   "filename": "fall-03.jpg",
-//   "title": "Berries",
-//   "color": "green",
-//   "likes": 1,
-//   "tags": ["branch", "fruit", "needles"]
-// }
+
+// Fall Beispiel Psik
 const columns = [
   {
     name: 'image',
