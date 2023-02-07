@@ -1,3 +1,6 @@
+// CORS
+const cors = require('cors');
+
 const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
@@ -13,6 +16,9 @@ require('dotenv').config();
 
 const app = express();
 
+// CORS
+app.use(cors());
+// CORS ENDE
 app.use(morgan('dev'));
 
 app.use(express.static(path.join(__dirname, '/public')));

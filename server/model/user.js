@@ -14,7 +14,7 @@ where p.id = 1;
 */
 const getUser = async (id) => {
   const { rows } = await db.query(
-    `select vorname, nachnamen, email, geburtsdatum, k.name, r.name from personen p
+    `select vorname, nachnamen, email, geburtsdatum, k.name as klasse, k.id as kid, r.name as rolle from personen p
     join klassen k on p.klassen_id = k.id
     join rollen r on p.rollen_id = r.id
     where p.id = $1;`,
